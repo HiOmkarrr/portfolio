@@ -1,12 +1,14 @@
-
 import LineGradient from "./components/LineGradient"
 import Navbar from "./scenes/Navbar"
 import { useEffect, useState } from "react";
 import useMediaQuery from "./hooks/useMediaQuery"
 import DotGroup from "./scenes/DotGroup"
+import Testimonials from "./scenes/Testimonials"
 import Landing from "./scenes/Landing"
 import MySkills from "./scenes/MySkills"
 import Projects from "./scenes/Projects"  
+import Contact from "./scenes/Contact"
+import Footer from "./scenes/Footer"
 
 function App() {
   const [selectedPage, setSelectedPage] = useState('home');
@@ -50,6 +52,19 @@ function App() {
         ">
           <Projects />
         </div>
+        <LineGradient />
+        <div className="
+          w-5/6 mx-auto md:h-full 
+        ">
+          <Testimonials />
+        </div>
+        <LineGradient />
+        <div className="
+          w-5/6 mx-auto md:h-full 
+        ">
+          <Contact />
+        </div>
+        <Footer />
     </div>
   );
 }
