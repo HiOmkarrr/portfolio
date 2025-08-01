@@ -17,10 +17,10 @@ const Contact = () => {
 	}
 
 	return (
-		<section id="contact" className="py-48">
+		<section id="contact" className="py-16 sm:py-20 lg:py-24">
 			{/* HEADING */}
 			<motion.div
-					className="flex justify-end w-full"
+					className="flex justify-end w-full px-4 sm:px-0"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -31,10 +31,10 @@ const Contact = () => {
           }}
         >
 					<div>
-          <p className="font-playfair font-semibold text-4xl">
-            <span className="text-yellow">CONTACT ME</span> TO GET STARTED
+          <p className="font-playfair font-semibold text-2xl mt-20 sm:text-3xl lg:text-4xl text-center md:text-right">
+            <span className="bg-gradient-neon bg-clip-text text-transparent">CONTACT ME</span> TO GET STARTED
           </p>
-					<div className="flex md:justify-end my-5">
+					<div className="flex justify-center md:justify-end my-4 sm:my-5">
           <LineGradient width="w-1/2" />
 					</div>
 					</div>

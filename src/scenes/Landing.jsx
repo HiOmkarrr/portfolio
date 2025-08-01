@@ -7,31 +7,31 @@ const Landing = ({ setSelectedPage }) => {
 const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)")
 
 return (
-	<section id="home" className="md:flex md: justify-between md:items-center md:h-full gap-16 py-10">
+	<section id="home" className="md:flex md:justify-between md:items-center md:h-full gap-8 sm:gap-12 lg:gap-16 py-8 sm:py-10 lg:py-12 px-4 sm:px-0">
 		{/* IMAGE */}
-		<div className="md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-32">
+		<div className="md:order-2 flex justify-center basis-3/5 z-10 mt-8 sm:mt-22 lg:mt-16 md:mt-48">
 			{isAboveMediumScreens ? (
 			<div 
-				className="relative z-0 ml-20 before:absolute before:-top-20 before:-left-20
-				before:rounded-t-[400px] before:w-full before:max-w-[400px] before:h-full
-				before:border-2 before:border-blue before:z-[-1]" 
+				className="relative z-0 ml-8 sm:ml-12 lg:ml-20 before:absolute before:-top-10 sm:before:-top-15 lg:before:-top-20 before:-left-10 sm:before:-left-15 lg:before:-left-20
+				before:rounded-t-[300px] sm:before:rounded-t-[350px] lg:before:rounded-t-[400px] before:w-full before:max-w-[300px] sm:before:max-w-[350px] lg:before:max-w-[400px] before:h-full
+				before:border-2 before:border-neon-blue before:shadow-glow before:z-[-1]" 
 				>
 					<img 
 						src="assets/profile-image2.jpg" 
-						className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px] rounded-t-[400px] "
+						className="hover:filter hover:saturate-200 hover:shadow-glow-lg transition-all duration-500 z-10 w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] rounded-t-[300px] sm:rounded-t-[350px] lg:rounded-t-[400px] border-2 border-glass-border"
 						alt="profile" 
 					/>
 			</div>
 			) : (
 					<img 
 						src="assets/profile-image2.jpg" 
-						className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px] "
+						className="hover:filter hover:saturate-200 hover:shadow-glow transition-all duration-500 z-10 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] rounded-lg border-2 border-glass-border"
 						alt="profile"  
 					/>
 			)}
 		</div>
 		{/* MAIN */}
-		<div className="z-30 basis-2/5 mt-12 md:mt-32">
+		<div className="z-30 basis-2/5 mt-8 sm:mt-12 lg:mt-16 md:mt-32">
 			{/* HEADINGS */}
 			<motion.div
 				initial="hidden"
@@ -43,20 +43,21 @@ return (
 				visible: {opacity: 1, x: 0}
 				}}
 			>
-			<p className="text-6xl font-playfair z-10 text-center md:text-start" >
-			Omkar {""}
-			<span className="xs:relative xs:text-deep-blue xs: font-semibold z-20 xs:before:content-brush before:absolute before:-left-[25px] before:-top-[70px] before:z-[-1] ">
+			<p className="text-4xl sm:text-5xl lg:text-6xl font-playfair z-10 text-center md:text-start mb-4 sm:mb-6" >
+			<span className="bg-gradient-neon bg-clip-text text-transparent">Omkar</span> {""}
+			<span className="xs:relative xs:text-neon-blue xs:font-semibold z-20  before:absolute before:-left-[15px] sm:before:-left-[20px] lg:before:-left-[25px] before:-top-[50px] sm:before:-top-[60px] lg:before:-top-[70px] before:z-[-1] hover:text-neon-pink transition-colors duration-300">
 			Mondkar
 			</span>
 			</p>
-			<p className="mt-10 mb-7 text-sm text-center md:text-start">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi laboriosam labore distinctio expedita accusantium ad eum, quisquam vel odit repudiandae natus ducimus possimus tempore. Id atque voluptatem aliquid optio adipisci.
+			<p className="mt-6 sm:mt-8 lg:mt-10 mb-6 sm:mb-7 text-sm sm:text-base text-center md:text-start text-gray-300 leading-relaxed">
+			Passionate Full-Stack Developer crafting innovative digital experiences with modern technologies. 
+			Specializing in React, Node.js, and cloud solutions that bring ideas to life.
 			</p>
 
 			</motion.div>
 			{/* CALL TO ACTIONS */}
         <motion.div
-          className="flex mt-5 justify-center md:justify-start"
+          className="flex flex-col sm:flex-row mt-4 sm:mt-5 justify-center md:justify-start gap-3 sm:gap-4"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -67,26 +68,26 @@ return (
           }}
         >
           <AnchorLink
-            className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold
-              hover:bg-blue hover:text-white transition duration-500"
+            className="bg-gradient-neon text-white rounded-lg py-3 px-6 sm:px-7 font-semibold text-sm sm:text-base
+              hover:shadow-glow-lg hover:scale-105 transition-all duration-300 transform text-center"
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
             Contact Me
           </AnchorLink>
           <AnchorLink
-            className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-0.5"
+            className="rounded-lg bg-glass-bg backdrop-blur-sm border border-glass-border py-0.5 pr-0.5 hover:shadow-glow transition-all duration-300"
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
-            <div className=" bg-deep-blue hover:text-red transition duration-500 w-full h-full flex items-center justify-center px-10 font-playfair">
+            <div className="bg-glass-bg backdrop-blur-sm hover:text-neon-blue transition-all duration-300 w-full h-full flex items-center justify-center px-6 py-3 sm:px-10 font-playfair rounded-lg text-sm sm:text-base">
               Let's talk.
             </div>
           </AnchorLink>
         </motion.div>
 
 		<motion.div 
-		className="flex mt-5 justify-center md:justify-start"
+		className="flex mt-4 sm:mt-5 justify-center md:justify-start"
 		initial="hidden"
 		whileInView="visible"
 		viewport={{ once: true, amount: 0.5 }}
